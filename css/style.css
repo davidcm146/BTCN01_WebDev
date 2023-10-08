@@ -10,7 +10,7 @@
     margin-right: auto;
 }
 
-.header::after{
+.header::after {
     content: "";
     display: block;
     max-width: 1200px;
@@ -31,7 +31,7 @@
     box-shadow: 4px 4px 7px rgb(131, 125, 125);
 }
 
-.nav-bar{
+.nav-bar {
     position: relative;
     height: 2em;
     text-align: center;
@@ -41,7 +41,7 @@
 .nav-list {
     list-style: none;
     position: absolute;
-    background-color:  rgb(139, 181, 223);
+    background-color: rgb(139, 181, 223);
     top: -54px;
     left: 23%;
     z-index: 1;
@@ -54,7 +54,7 @@
     padding: 0 30px 0 30px;
 }
 
-.nav-item:first-child .nav-item_link{
+.nav-item:first-child .nav-item_link {
     color: #FFC859;
 }
 
@@ -63,12 +63,12 @@
     color: #0863A4;
 }
 
-.main{
+.main {
     display: flex;
     margin-left: calc((1503.2px - var(--width-all)) / 2);
 }
 
-.main::after{
+.main::after {
     content: "";
     display: block;
     width: 2px;
@@ -77,12 +77,12 @@
     margin-bottom: 3px;
 }
 
-.sidebar{
+.sidebar {
     width: 360px;
     position: relative;
 }
 
-.sidebar::after{
+.sidebar::after {
     content: "";
     display: inline-block;
     position: absolute;
@@ -97,18 +97,18 @@
     /* background: var(--background-header); */
 }
 
-.sidebar-list{
+.sidebar-list {
     list-style: none;
     margin: 0 8px 0 0;
     padding-left: 5px;
 }
 
-.sidebar-item{
+.sidebar-item {
     position: relative;
     margin-bottom: 112px;
 }
 
-.sidebar-item_header{
+.sidebar-item_header {
     font-weight: 300;
     height: 50px;
     font-size: 25px;
@@ -119,7 +119,7 @@
     margin: 0;
 }
 
-.sidebar-item_content{
+.sidebar-item_content {
     display: block;
     position: absolute;
     top: 50px;
@@ -127,4 +127,71 @@
     line-height: 22px;
     padding-left: 5px;
     border: 1px solid #655E57;
+}
+
+.content{
+    margin-right: calc((1503.2px - var(--width-all)) / 2);
+    width: 100%;
+}
+
+.order-product_header{
+    text-align: center;
+}
+
+.info_input{
+    display: flex;
+    justify-content: flex-end;
+    padding-top: 20px;
+}
+
+.info_input-content{
+    display: flex;
+    flex-direction: column;
+    flex-basis: 30%;
+}
+
+.info_input-bar{
+    display: flex;
+    flex-direction: column;
+    flex-basis: 50%;
+    width: 100%;
+}
+
+.full-name_content,
+.address_content,
+.phone-number_content,
+.gender_content,
+.delivery-date_content,
+.email_content{
+    margin-left: auto;
+    margin-bottom: 7px;
+    margin-right: 5px;
+}
+
+.full-name_input,
+.address_input,
+.phone-number_input,
+.delivery-date_input,
+.email_input{
+    width: 100%;
+    margin-bottom: 5px;
+}
+
+.gender{
+    display: flex;
+    line-height: 20px;
+}
+
+.male_input,
+.female_input{
+    display: flex;
+}
+
+.male_input{
+    margin-right: 8px;
+}
+
+.male_content,
+.female_content{
+    padding-left: 3px;
 }

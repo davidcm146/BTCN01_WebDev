@@ -92,37 +92,52 @@
         </div>
 
         <div class="content">
-            <h3 class="order-product">
+            <h3 class="order-product_header">
                 ĐĂNG KÝ ĐƠN HÀNG
             </h3>
             <div class="info_input">
-                <label for="" class="full-name">Họ và tên:
-                    <input type="text" class="full-name_input">
-                </label>
+                <div class="info_input-content">
+                    <span class="full-name_content">Họ và tên: </span> 
+                    <span class="address_content">Địa chỉ: </span>
+                    <span class="phone-number_content">Điện thoại: </span>
+                    <span class="gender_content">Giới tính: </span>
+                    <span class="delivery-date_content">Ngày giao hàng: </span>
+                    <span class="email_content">Email: </span> 
+                </div>
 
-                <label for="" class="address">Địa chỉ:
-                    <input type="text" class="address_input">
-                </label>
+                <div class="info_input-bar">
+                    <label for="" class="full-name">
+                        <input type="text" class="full-name_input">
+                    </label>
+                    
+                    <label for="" class="address">
+                        <input type="text" class="address_input">
+                    </label>
 
-                <label for="" class="phone-number">Điện thoại:
-                    <input type="text" class="phone-number_input">
-                </label>
+                    <label for="" class="phone-number">
+                        <input type="text" class="phone-number_input">
+                    </label>
 
-                <label for="" class="gender">Giới tính:
-                    <input type="radio" id="Male" name="gender" value="Nam">
-                    <label for="Male">Nam</label>
-                    <input type="radio" name="gender" value="Nữ">
-                    <label for="Female">Nữ</label>
-                </label>
+                    <label for="" class="gender">
+                        <div class="male_input">
+                            <input type="radio" class="gender_input" id="Male" name="gender" value="Nam">
+                            <label for="Male" class="male_content">Nam</label>
+                        </div>
+                        
+                        <div class="femmale_input">
+                            <input type="radio" class="gender_input" name="gender" value="Nữ">
+                            <label for="Female" class="female_content">Nữ</label>
+                        </div>
+                    </label>
 
-                <label for="" class="delivery-date">Ngày giao hàng: 
-                    <input type="date" class="delivery-date_input">
-                </label>
-
-                <label for="" class="email">Email: 
-                    <input type="email" class="email_input">
-                </label>
-
+                    <label for="" class="delivery-date">
+                        <input type="date" class="delivery-date_input">
+                    </label>
+    
+                    <label for="" class="email">
+                        <input type="email" class="email_input">
+                    </label>
+                </div>
             </div>
         </div>
     </div>
