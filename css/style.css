@@ -1,5 +1,7 @@
 * {
     box-sizing: border-box;
+    --background-header: linear-gradient(160deg, rgb(82, 135, 232) 0%, rgb(139, 181, 223) 100%);
+    --width-all: 1200px;
 }
 
 .header {
@@ -8,26 +10,121 @@
     margin-right: auto;
 }
 
+.header::after{
+    content: "";
+    display: block;
+    max-width: 1200px;
+    height: 2px;
+    background: var(--background-header);
+    margin-bottom: 3px;
+}
+
 .content-heading {
     height: 6em;
     width: 100%;
-    border-radius: 5px;
-    background-color: #0863A4;
+    border-radius: 7px;
+    background: var(--background-header);
     display: block;
     text-align: center;
     line-height: 6em;
     font-family: 'Courier New', Courier, monospace;
+    box-shadow: 4px 4px 7px rgb(131, 125, 125);
+}
+
+.nav-bar{
+    position: relative;
+    height: 2em;
+    text-align: center;
+    line-height: 2em;
 }
 
 .nav-list {
     list-style: none;
+    position: absolute;
+    background-color:  rgb(139, 181, 223);
+    top: -54px;
+    left: 23%;
+    z-index: 1;
+    border-radius: 5px;
+    box-shadow: 4px 4px 6px rgb(129, 123, 123);
 }
 
 .nav-item {
     display: inline-block;
+    padding: 0 30px 0 30px;
+}
+
+.nav-item:first-child .nav-item_link{
+    color: #FFC859;
 }
 
 .nav-item_link {
     text-decoration: none;
     color: #0863A4;
+}
+
+.main{
+    display: flex;
+    margin-left: calc((1503.2px - var(--width-all)) / 2);
+}
+
+.main::after{
+    content: "";
+    display: block;
+    width: 2px;
+    height: 100%;
+    background: var(--background-header);
+    margin-bottom: 3px;
+}
+
+.sidebar{
+    width: 360px;
+    position: relative;
+}
+
+.sidebar::after{
+    content: "";
+    display: inline-block;
+    position: absolute;
+    top: -5px;
+    right: 0;
+    width: 1px;
+    border: 2px dotted #1EABD3;
+    border-left: 0;
+    border-top: 0;
+    border-bottom: 0;
+    height: 100%;
+    /* background: var(--background-header); */
+}
+
+.sidebar-list{
+    list-style: none;
+    margin: 0 8px 0 0;
+    padding-left: 5px;
+}
+
+.sidebar-item{
+    position: relative;
+    margin-bottom: 112px;
+}
+
+.sidebar-item_header{
+    font-weight: 300;
+    height: 50px;
+    font-size: 25px;
+    color: #FFFCF7;
+    line-height: 50px;
+    background-color: #FF8C00;
+    text-align: center;
+    margin: 0;
+}
+
+.sidebar-item_content{
+    display: block;
+    position: absolute;
+    top: 50px;
+    height: 110px;
+    line-height: 22px;
+    padding-left: 5px;
+    border: 1px solid #655E57;
 }
