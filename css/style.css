@@ -2,6 +2,7 @@
     box-sizing: border-box;
     --background-header: linear-gradient(160deg, rgb(82, 135, 232) 0%, rgb(139, 181, 223) 100%);
     --width-all: 1200px;
+    --main-orange: #FF8C00;
 }
 
 /* header */
@@ -117,7 +118,7 @@
 .sidebar-item_header-container{
     display: flex;
     justify-content: space-between;
-    background-color: #FF8C00;
+    background-color: var(--main-orange);
 }
 
 .sidebar-item_header {
@@ -134,6 +135,9 @@
 .sidebar-item_header-updown{
     line-height: 50px;
     color: #FFFCF7;
+    background-color: var(--main-orange);
+    border: 0;
+    cursor: pointer;
     font-size: 18px;
 
 }
@@ -149,7 +153,7 @@
 .sidebar-item_content {
     display: block;
     position: absolute;
-    top: 50px;
+    top: 52px;
     height: 152px;
     line-height: 22px;
     padding-left: 5px;
@@ -245,6 +249,17 @@
 .product-list-container{
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.product-list-container::after{
+    content: "";
+    display: block;
+    height: 1px;
+    width: 100%;
+    background-color: rgb(138, 128, 128);
+    margin: 10px 0 10px 15px;
 }
 
 .product-list-available{
@@ -322,5 +337,41 @@
     border: 1px solid #f08f18;
     border-radius: 0;
 }
+
+.transfer-product_container{
+    display: flex;
+    flex-direction: column;
+    width: 34px;
+    margin-left: 12px;
+}
+
+.transfer-one-to-right,
+.transfer-many-to-right,
+.transfer-one-to-left,
+.transfer-many-to-left{
+    border: 1px solid #f08f18;
+    background-color: rgb(255, 255, 255);
+    text-align: center;
+    margin-top: 5px;
+    border-radius: 2px;
+    cursor: pointer;
+}
+
+.register-delete-container{
+    margin: 5px auto 0 auto;
+}
+
+.register-btn,
+.delete-btn{
+    border: 1px solid var(--main-orange);
+    border-radius: 2px;
+    background-color: rgb(255, 255, 255);
+    font-size: 13px;
+}
+
+.delete-btn{
+    margin-left: 4px;
+}
+
 
 
