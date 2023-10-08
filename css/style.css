@@ -129,28 +129,28 @@
     border: 1px solid #655E57;
 }
 
-.content{
+.content {
     margin-right: calc((1503.2px - var(--width-all)) / 2);
     width: 100%;
 }
 
-.order-product_header{
+.order-product_header {
     text-align: center;
 }
 
-.info_input{
+.info_input {
     display: flex;
     justify-content: flex-end;
     padding-top: 20px;
 }
 
-.info_input-content{
+.info_input-content {
     display: flex;
     flex-direction: column;
     flex-basis: 30%;
 }
 
-.info_input-bar{
+.info_input-bar {
     display: flex;
     flex-direction: column;
     flex-basis: 50%;
@@ -162,7 +162,7 @@
 .phone-number_content,
 .gender_content,
 .delivery-date_content,
-.email_content{
+.email_content {
     margin-left: auto;
     margin-bottom: 7px;
     margin-right: 5px;
@@ -172,26 +172,26 @@
 .address_input,
 .phone-number_input,
 .delivery-date_input,
-.email_input{
+.email_input {
     width: 100%;
     margin-bottom: 5px;
 }
 
-.gender{
+.gender {
     display: flex;
     line-height: 20px;
 }
 
 .male_input,
-.female_input{
+.female_input {
     display: flex;
 }
 
-.male_input{
+.male_input {
     margin-right: 8px;
 }
 
 .male_content,
-.female_content{
+.female_content {
     padding-left: 3px;
 }
