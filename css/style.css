@@ -1,0 +1,33 @@
+* {
+    box-sizing: border-box;
+}
+
+.header {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.content-heading {
+    height: 6em;
+    width: 100%;
+    border-radius: 5px;
+    background-color: #0863A4;
+    display: block;
+    text-align: center;
+    line-height: 6em;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.nav-list {
+    list-style: none;
+}
+
+.nav-item {
+    display: inline-block;
+}
+
+.nav-item_link {
+    text-decoration: none;
+    color: #0863A4;
+}
