@@ -373,5 +373,24 @@
     margin-left: 4px;
 }
 
+.table-register-info{
+    width: 100%;
+    margin: 0;
+    padding-left: 13px;
+    border: 1px solid rgb(255, 255, 255);
+}
+
+.table-register-col{
+    background-color: rgb(255, 187, 61);
+}
+
+.table-register-col th{
+    color: rgb(255, 255, 255);
+}
+
+.table-register-info, .table-register-col{
+    text-align: center;
+}
+
 
 
