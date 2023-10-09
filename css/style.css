@@ -325,7 +325,7 @@
 }
 
 .product-list-chosen .product-list{
-    overflow-y: hidden;
+    overflow-y: scroll;
 }
 
 .product-list-chosen .product-list_content{

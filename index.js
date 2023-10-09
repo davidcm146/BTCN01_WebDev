@@ -1,5 +1,7 @@
 const clickSidebarItems = document.querySelectorAll('.sidebar-item .sidebar-item_header-container .sidebar-item_header-showcontent');
 const dragSidebarItems = document.querySelectorAll('.sidebar-item .sidebar-item_header-container .sidebar-item_header-updown');
+const dragToRight = document.querySelector('.transfer-product_container .transfer-many-to-right');
+const dragToLeft = document.querySelector('.transfer-product_container .transfer-many-to-left')
 
 clickSidebarItems.forEach((sidebarItem) =>{
     sidebarItem.addEventListener('click', handleOpenBarHeader);
@@ -13,7 +15,8 @@ dragSidebarItems.forEach((sidebarItem) =>{
     sidebarItem.addEventListener('drop', handleDrop);
 })
 
-
+dragToRight.addEventListener('click', handleTransferToRightAll);
+dragToLeft.addEventListener('click', handleTransferToLeftAll)
 
 function handleOpenBarHeader(e){
     if (e.target.parentNode.nextSibling.nextSibling.style.display === 'none')
@@ -37,6 +40,46 @@ function handleOpenBarHeader(e){
 }
 var startPos;
 
+// dragSidebarItems.forEach((sidebarItem) => {
+//     sidebarItem.addEventListener("mousedown", (e) => {
+//       e.preventDefault();
+//       console.log("Is dragging");
+//       console.log("ClientX", e.clientX);
+//       console.log("ClientY", e.clientY);
+//       sidebarItem.oldX = e.clientX;
+//       sidebarItem.oldY = e.clientY;
+//       sidebarItem.isDragging = true;
+//       const thumb = sidebarItem.cloneNode(true);
+//       thumb.isDragging = true;
+//       thumb.oldX = sidebarItem.oldX;
+//       thumb.oldY = sidebarItem.oldY;
+//       thumb.original = sidebarItem;
+//       thumb.classList.toggle("thumb");
+//       sidebarItem.parentNode.appendChild(thumb);
+//       thumb.addEventListener("mouseup", (e) => {
+//         console.log("Mouse up");
+//         thumb.isDragging = false;
+//         const real = thumb.original;
+//         real.style.left = thumb.style.left;
+//         real.style.top = thumb.style.top;
+//         console.log('Real top', real.style.top);
+//         console.log('Real left', real.style.left)
+//         real.parentNode.removeChild(thumb);
+//       });
+//       thumb.addEventListener("mousemove", (e) => {
+//         if (thumb.isDragging) {
+//           console.log("MOuse moving")
+//           const dX = e.clientX - thumb.oldX;
+//           const dY = e.clientY - thumb.oldY;
+//           thumb.style.left = thumb.offsetLeft + dX + "px";
+//           thumb.style.top = thumb.offsetTop + dY + "px";
+//           thumb.oldX = e.clientX;
+//           thumb.oldY = e.clientY;
+//         }
+//       });
+//     });
+//   });
+
 function handleMouseDown(e){
     //e.preventDefault();
     startPos  = e.target.parentNode.parentNode;
@@ -59,7 +102,7 @@ function handleDragOver(e){
 }
 
 function handleDrop(e){
-    e.target.parentNode.parentNode.parentNode.appendChild(startPos);
+    e.target.parentNode.parentNode.parentNode.append(startPos);
 }
 
 function checkFullName(){
@@ -124,6 +167,43 @@ function checkPhoneNumber(){
         }, 1000)
     }
 }
+
+function checkEmail(){
+    var email = document.querySelector('.email .email_input');
+    try{
+        if (!email.value.contains('@') || email.value.length <= 2 || email.value === undefined || email.value.contains('!') ||
+        email.value.contains('*') || email.value.contains('%') || email.value.contains('$') || email.value.contains('&') || email.value === '')
+            throw "*Email không hợp lệ";
+    }
+    catch(err)
+    {
+        const notify = document.createElement("p");
+        notify.innerText = err;
+        notify.style.color = 'red';
+        notify.style.margin = "0 0 0 0";
+        document.querySelector('.email').appendChild(notify);
+        //document.querySelector('.gender_content').style.padding = '10px 0 0 0';
+        setTimeout(()=>{
+            notify.remove();
+        }, 1000)
+    }
+}
+
+function handleTransferToRightAll(){
+    var listProduct = document.querySelectorAll('.product-list-container .product-list-available .product-list .product-item');
+    listProduct.forEach((product)=>{
+        document.querySelector('.product-list-chosen .product-list').append(product);
+    })
+}
+
+function handleTransferToLeftAll(){
+    var listProduct = document.querySelectorAll('.product-list-container .product-list-chosen .product-list .product-item');
+    listProduct.forEach((product)=>{
+        document.querySelector('.product-list-available .product-list').append(product);
+    })
+}
+
+
 
 
 
