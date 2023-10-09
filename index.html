@@ -142,37 +142,37 @@
                 </div>
 
                 <div class="info_input-bar">
-                    <label for="" class="full-name">
-                        <input type="text" class="full-name_input" id="full-name">
-                    </label>
+                    <form class="full-name">
+                        <input type="text" class="full-name_input" id="full-name" onblur="checkFullName()">
+                    </form>
                     
-                    <label for="" class="address">
-                        <input type="text" class="address_input" id="address">
-                    </label>
+                    <form class="address">
+                        <input type="text" class="address_input" id="address" onblur="checkAddress()">
+                    </form>
 
-                    <label for="" class="phone-number">
-                        <input type="text" class="phone-number_input" id="phone-number">
-                    </label>
+                    <form class="phone-number">
+                        <input type="text" class="phone-number_input" id="phone-number" onblur="checkPhoneNumber()">
+                    </form>
 
-                    <label for="" class="gender">
+                    <form class="gender">
                         <div class="male_input">
-                            <input type="radio" class="gender_input" id="gender" name="gender" value="Nam">
-                            <label for="Male" class="male_content">Nam</label>
+                            <input type="radio" class="gender_input" id="gender-male" name="gender" value="Nam">
+                            <label for="gender-male" class="male_content">Nam</label>
                         </div>
                         
                         <div class="femmale_input">
-                            <input type="radio" class="gender_input" id="gender" name="gender" value="Nữ">
-                            <label for="Female" class="female_content">Nữ</label>
+                            <input type="radio" class="gender_input" id="gender-female" name="gender" value="Nữ">
+                            <label for="gender-female" class="female_content">Nữ</label>
                         </div>
-                    </label>
+                    </form>
 
-                    <label for="" class="delivery-date">
+                    <form class="delivery-date">
                         <input type="date" id="delivery-date" class="delivery-date_input">
-                    </label>
+                    </form>
     
-                    <label for="" class="email">
+                    <form class="email">
                         <input type="email" id="email" class="email_input">
-                    </label>
+                    </form>
                 </div>
             </div>
 
@@ -415,5 +415,6 @@
             </li>
         </ul>
     </div>
+    <script src="index.js"></script>
 </body>
 </html>

@@ -122,7 +122,7 @@
 
 .sidebar-item_header {
     font-weight: 300;
-    height: 50px;
+    height: 52px;
     font-size: 25px;
     color: #FFFCF7;
     line-height: 50px;
@@ -132,13 +132,12 @@
 
 .sidebar-item_header-showcontent,
 .sidebar-item_header-updown{
-    line-height: 50px;
+    line-height: 52px;
     color: #FFFCF7;
     background-color: var(--main-orange);
     border: 0;
     cursor: pointer;
     font-size: 18px;
-
 }
 
 .sidebar-item_header-showcontent{
@@ -153,7 +152,7 @@
     display: block;
     position: absolute;
     top: 52px;
-    height: 152px;
+    max-height: 152px;
     line-height: 22px;
     padding-left: 5px;
     border: 1px solid #655E57;
@@ -413,7 +412,6 @@
 }
 
 .footer{
-    position: relative;
     max-width: 1200px;
     margin-left: calc((1503.2px - var(--width-all)) / 2);
     display: flex;
@@ -440,12 +438,11 @@
     list-style: none;
     padding: 0;
     margin-right: 50px;
+    margin-left: 10px;
 }
 
 .copyright-description{
-    position: absolute;
     color: #f0b33b;
-    left: 20%;
 }
 
 .footer-navbar-item{
