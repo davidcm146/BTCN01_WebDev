@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
     <div class="header">
         <h1 class="content-heading">Bài tập 1 - 21120472</h1>
@@ -48,8 +50,8 @@
     <div class="main">
         <div class="sidebar">
             <ul class="sidebar-list">
-                <li class="sidebar-item">
-                    <div class="sidebar-item_header-container">
+                <li class="sidebar-item" draggable="true" id="news01">
+                    <div class="sidebar-item_header-container" draggable="true" ondragstart="drag(event)">
                         <button class="sidebar-item_header-showcontent">
                             ⬇
                         </button>
@@ -63,12 +65,12 @@
                         Lorem ipsum dolor sit, amet consecteur
                         adispicing elit. Offciis quaerat maxime vitae
                         nam optio corporis molestias cum, magnam ab ?
-                        Sequi amet a quisquam, error delectus saepe quia 
+                        Sequi amet a quisquam, error delectus saepe quia
                         laborum illo natus.
                     </span>
                 </li>
-                <li class="sidebar-item">
-                    <div class="sidebar-item_header-container">
+                <li class="sidebar-item" draggable="true" id="news02">
+                    <div class="sidebar-item_header-container" draggable="true" ondragstart="drag(event)">
                         <button class="sidebar-item_header-showcontent">
                             ⬇
                         </button>
@@ -82,12 +84,12 @@
                         Lorem ipsum dolor sit, amet consecteur
                         adispicing elit. Offciis quaerat maxime vitae
                         nam optio corporis molestias cum, magnam ab ?
-                        Sequi amet a quisquam, error delectus saepe quia 
+                        Sequi amet a quisquam, error delectus saepe quia
                         laborum illo natus.
                     </span>
                 </li>
-                <li class="sidebar-item">
-                    <div class="sidebar-item_header-container">
+                <li class="sidebar-item" draggable="true" id="news03">
+                    <div class="sidebar-item_header-container" draggable="true" ondragstart="drag(event)">
                         <button class="sidebar-item_header-showcontent">
                             ⬇
                         </button>
@@ -101,12 +103,12 @@
                         Lorem ipsum dolor sit, amet consecteur
                         adispicing elit. Offciis quaerat maxime vitae
                         nam optio corporis molestias cum, magnam ab ?
-                        Sequi amet a quisquam, error delectus saepe quia 
+                        Sequi amet a quisquam, error delectus saepe quia
                         laborum illo natus.
                     </span>
                 </li>
-                <li class="sidebar-item">
-                    <div class="sidebar-item_header-container">
+                <li class="sidebar-item" draggable="true" id="news04">
+                    <div class="sidebar-item_header-container" draggable="true" ondragstart="drag(event)">
                         <button class="sidebar-item_header-showcontent">
                             ⬇
                         </button>
@@ -120,7 +122,7 @@
                         Lorem ipsum dolor sit, amet consecteur
                         adispicing elit. Offciis quaerat maxime vitae
                         nam optio corporis molestias cum, magnam ab ?
-                        Sequi amet a quisquam, error delectus saepe quia 
+                        Sequi amet a quisquam, error delectus saepe quia
                         laborum illo natus.
                     </span>
                 </li>
@@ -131,165 +133,178 @@
             <h3 class="order-product_header">
                 ĐĂNG KÝ ĐƠN HÀNG
             </h3>
-            <div class="info_input">
-                <div class="info_input-content">
-                    <label for="full-name" class="full-name_content">Họ và tên: </label> 
-                    <label for="address" class="address_content">Địa chỉ: </label>
-                    <label for="phone-number" class="phone-number_content">Điện thoại: </label>
-                    <label for="gender" class="gender_content">Giới tính: </label>
-                    <label for="delivery-date" class="delivery-date_content">Ngày giao hàng: </label>
-                    <label for="email" class="email_content">Email: </label> 
+            <form action="/">
+
+                <div class="info_input">
+                    <div class="info_input-content">
+                        <label for="full-name" class="full-name_content">Họ và tên: </label>
+                        <label for="address" class="address_content">Địa chỉ: </label>
+                        <label for="phone-number" class="phone-number_content">Điện thoại: </label>
+                        <label for="gender" class="gender_content">Giới tính: </label>
+                        <label for="delivery-date" class="delivery-date_content">Ngày giao hàng: </label>
+                        <label for="email" class="email_content">Email: </label>
+                    </div>
+
+                    <div class="info_input-bar">
+                        <form class="full-name">
+                            <input type="text" class="full-name_input" id="full-name" onblur="checkFullName()"
+                                onclick="removeFullnameError()" required>
+                            <p class="fullname-error"></p>
+                        </form>
+
+                        <form class="address">
+                            <input type="text" class="address_input" id="address" onblur="checkAddress()"
+                                onclick="removeAddressError()" required>
+                            <p class="address-error"></p>
+                        </form>
+
+                        <form class="phone-number">
+                            <input type="text" class="phone-number_input" id="phone-number" onblur="checkPhoneNumber()"
+                                onclick="removePhoneNumberError()" required>
+                            <p class="phone-error"></p>
+                        </form>
+
+                        <form class="gender">
+                            <div class="male_input">
+                                <input type="radio" class="gender_input" id="gender-male" name="gender" value="Nam"
+                                    required>
+                                <label for="gender-male" class="male_content">Nam</label>
+                            </div>
+
+                            <div class="femmale_input">
+                                <input type="radio" class="gender_input" id="gender-female" name="gender" value="Nữ"
+                                    required>
+                                <label for="gender-female" class="female_content">Nữ</label>
+                            </div>
+                        </form>
+
+                        <form class="delivery-date">
+                            <input type="date" id="delivery-date" class="delivery-date_input"
+                                onblur="checkDeliveryDate()" onclick="removeDeliveryDate()" required>
+                            <p class="date-error"></p>
+                        </form>
+
+                        <form class="email">
+                            <input type="email" id="email" class="email_input" onblur="checkEmail()"
+                                onclick="removeEmailError()" required>
+                            <p class="email-error"></p>
+                        </form>
+                    </div>
                 </div>
 
-                <div class="info_input-bar">
-                    <form class="full-name">
-                        <input type="text" class="full-name_input" id="full-name" onblur="checkFullName()">
-                    </form>
-                    
-                    <form class="address">
-                        <input type="text" class="address_input" id="address" onblur="checkAddress()">
-                    </form>
+                <div class="product-list-container">
+                    <div class="product-list-available">
+                        <span class="product-list_content">Danh sách sản phẩm</span>
+                        <ul class="product-list">
+                            <li class="product-item" draggable="true">
+                                <div class="product-item_icon">📱</div>
+                                <span class="product-item_description">iPhone 14 Pro Max 256GB</span>
+                                <span class="product-item_price">$1349</span>
+                            </li>
+                            <li class="product-item" draggable="true">
+                                <div class="product-item_icon">📱</div>
+                                <span class="product-item_description">Samsung S23 Ultra 256GB</span>
+                                <span class="product-item_price">$1089</span>
+                            </li>
+                            <li class="product-item" draggable="true">
+                                <div class="product-item_icon">📱</div>
+                                <span class="product-item_description">iPad Pro M1 11'' 128GB</span>
+                                <span class="product-item_price">$999</span>
+                            </li>
+                            <li class="product-item" draggable="true">
+                                <div class="product-item_icon">💻</div>
+                                <span class="product-item_description">ASUS Zenbook UX505</span>
+                                <span class="product-item_price">$929</span>
+                            </li>
+                            <li class="product-item" draggable="true">
+                                <div class="product-item_icon">💻</div>
+                                <span class="product-item_description">LG Gram 2023 17''</span>
+                                <span class="product-item_price">$1049</span>
+                            </li>
+                            <li class="product-item" draggable="true">
+                                <div class="product-item_icon">💻</div>
+                                <span class="product-item_description">DELL XPS 13 9315 (2022)</span>
+                                <span class="product-item_price">$1199</span>
+                            </li>
+                            <li class="product-item" draggable="true">
+                                <div class="product-item_icon">📱</div>
+                                <span class="product-item_description">iPhone 14 Pro 512GB</span>
+                                <span class="product-item_price">$849</span>
+                            </li>
+                        </ul>
+                    </div>
 
-                    <form class="phone-number">
-                        <input type="text" class="phone-number_input" id="phone-number" onblur="checkPhoneNumber()">
-                    </form>
+                    <div class="transfer-product_container">
+                        <button class="transfer-one-to-right">
+                            &#62
+                        </button>
 
-                    <form class="gender">
-                        <div class="male_input">
-                            <input type="radio" class="gender_input" id="gender-male" name="gender" value="Nam">
-                            <label for="gender-male" class="male_content">Nam</label>
-                        </div>
-                        
-                        <div class="femmale_input">
-                            <input type="radio" class="gender_input" id="gender-female" name="gender" value="Nữ">
-                            <label for="gender-female" class="female_content">Nữ</label>
-                        </div>
-                    </form>
+                        <button class="transfer-many-to-right">
+                            &#62&#62
+                        </button>
 
-                    <form class="delivery-date">
-                        <input type="date" id="delivery-date" class="delivery-date_input">
-                    </form>
-    
-                    <form class="email">
-                        <input type="email" id="email" class="email_input" onblur="checkEmail()">
-                    </form>
+                        <button class="transfer-one-to-left">
+                            &#60
+                        </button>
+
+                        <button class="transfer-many-to-left">
+                            &#60&#60
+                        </button>
+                    </div>
+
+                    <div class="product-list-chosen">
+                        <span class="product-list_content">Sản phẩm được chọn</span>
+                        <ul class="product-list">
+                            <li class="product-item" draggable="true">
+                                <div class="product-item_icon">📱</div>
+                                <span class="product-item_description">iPhone 14 Pro 512GB</span>
+                                <span class="product-item_price">$849</span>
+                            </li>
+                            <li class="product-item" draggable="true">
+                                <div class="product-item_icon">💻</div>
+                                <span class="product-item_description">Macbook Pro 16'' 2023</span>
+                                <span class="product-item_price">$2300</span>
+                            </li>
+                            <li class="product-item" draggable="true">
+                                <div class="product-item_icon">💻</div>
+                                <span class="product-item_description">LG Gram 2021 14''</span>
+                                <span class="product-item_price">$729</span>
+                            </li>
+                            <li class="product-item" draggable="true">
+                                <div class="product-item_icon">📱</div>
+                                <span class="product-item_description">iPad Pro M2 12.9 256GB</span>
+                                <span class="product-item_price">$1399</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="register-delete-container">
+                        <input class="register-btn" type="submit" value="Đăng ký" />
+
+                        <button class="delete-btn">
+                            Xóa hết
+                        </button>
+                    </div>
                 </div>
-            </div>
-
-            <div class="product-list-container">
-                <div class="product-list-available">
-                    <span class="product-list_content">Danh sách sản phẩm</span>
-                <ul class="product-list">
-                    <li class="product-item">
-                            <div class="product-item_icon">📱</div>
-                            <span class="product-item_description">iPhone 14 Pro Max 256GB</span>
-                            <span class="product-item_price">$1349</span>
-                    </li>
-                    <li class="product-item">
-                            <div class="product-item_icon">📱</div>
-                            <span class="product-item_description">Samsung S23 Ultra 256GB</span>
-                            <span class="product-item_price">$1089</span>
-                    </li>
-                    <li class="product-item">
-                            <div class="product-item_icon">📱</div>
-                            <span class="product-item_description">iPad Pro M1 11'' 128GB</span>
-                            <span class="product-item_price">$999</span>
-                    </li>
-                    <li class="product-item">
-                            <div class="product-item_icon">💻</div>
-                            <span class="product-item_description">ASUS Zenbook UX505</span>
-                            <span class="product-item_price">$929</span>
-                    </li>
-                    <li class="product-item">
-                            <div class="product-item_icon">💻</div>
-                            <span class="product-item_description">LG Gram 2023 17''</span>
-                            <span class="product-item_price">$1049</span>
-                    </li>
-                    <li class="product-item">
-                            <div class="product-item_icon">💻</div>
-                            <span class="product-item_description">DELL XPS 13 9315 (2022)</span>
-                            <span class="product-item_price">$1199</span>
-                    </li>
-                    <li class="product-item">
-                            <div class="product-item_icon">📱</div>
-                            <span class="product-item_description">iPhone 14 Pro 512GB</span>
-                            <span class="product-item_price">$849</span>
-                    </li>
-                </ul>
-            </div>
-
-            <div class="transfer-product_container">
-                <button class="transfer-one-to-right">
-                    &#62
-                </button>
-
-                <button class="transfer-many-to-right">
-                    &#62&#62
-                </button>
-
-                <button class="transfer-one-to-left">
-                    &#60
-                </button>
-
-                <button class="transfer-many-to-left">
-                    &#60&#60
-                </button>
-            </div>
-            
-            <div class="product-list-chosen">
-                <span class="product-list_content">Sản phẩm được chọn</span>
-                <ul class="product-list">
-                    <li class="product-item">
-                            <div class="product-item_icon">📱</div>
-                            <span class="product-item_description">iPhone 14 Pro 512GB</span>
-                            <span class="product-item_price">$849</span>
-                    </li>
-                    <li class="product-item">
-                            <div class="product-item_icon">💻</div>
-                            <span class="product-item_description">Macbook Pro 16'' 2023</span>
-                            <span class="product-item_price">$2300</span>
-                    </li>
-                    <li class="product-item">
-                            <div class="product-item_icon">💻</div>
-                            <span class="product-item_description">LG Gram 2021 14''</span>
-                            <span class="product-item_price">$729</span>
-                    </li>
-                    <li class="product-item">
-                            <div class="product-item_icon">📱</div>
-                            <span class="product-item_description">iPad Pro M2 12.9 256GB</span>
-                            <span class="product-item_price">$1399</span>
-                    </li>
-                </ul>
-            </div>
-
-            <div class="register-delete-container">
-                <button class="register-btn">
-                    Đăng ký
-                </button>
-
-                <button class="delete-btn">
-                    Xóa hết
-                </button>
-            </div>
-            </div>
+            </form>
             <table class="table-register-info">
                 <tr class="table-register-col">
                     <th class="full-name-col">
                         Họ tên
                     </th>
-    
+
                     <th class="gender-rol">
                         Giới tính
                     </th>
-    
+
                     <th class="address-col">
                         Địa chỉ
                     </th>
-    
+
                     <th class="delivery-date-col">
                         Ngày giao
                     </th>
-    
+
                     <th class="product-info-col">
                         Sản phẩm
                     </th>
@@ -417,4 +432,5 @@
     </div>
     <script src="index.js"></script>
 </body>
+
 </html>
